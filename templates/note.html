@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Добавление объявления{% endblock %}
+{% block body %}
+    <div class="left-site">
+        <div class="new-item">
+            <a href="/notes">Список объявлений</a>
+            <h3>Добавить новое объявление</h3>
+            <form action="/" method="post" name="pasteform">
+                <table>
+                    <tr>
+                        <td align="right">
+                            <label>Заголовок</label>
+                        </td>
+                        <td>
+                            <input type="text" name="title" size="30" value="" maxlength="30" /></td>
+                        </tr>
+                    <tr>
+                        <td align="right">
+                            <label>Объявление</label>
+                        </td>
+                        <td>
+                            <input type="text" name="announcement" size="50" value="" maxlength="150" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Добавить объявление" />
+                            </td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+{% endblock %}

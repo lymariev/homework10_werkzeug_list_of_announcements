@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Список объявлений{% endblock %}
+{% block body %}
+    <a href="/">Добавить новое объявление</a>
+    <h3>Список объявлений</h3>
+    {% for announcement in announcements %}
+        <div class="item-detail">
+                <div class="item-header">
+                    {% if announcement['title'] %}
+                        <div class="item-title">{{ announcement["title"] }}</div>
+                    {% else %}
+                        <div class="item-title">Без имени</div>
+                    {% endif %}
+                    <div class="item-content">{{  announcement["announcement"]  }}</div>
+                    <span class="item-created_at">Добавлено: {{  announcement["created_at"].strftime('%d.%m.%Y') }}</span>
+                </div>
+        </div>
+    {% endfor %}
+{% endblock %}
